@@ -52,4 +52,9 @@ public class HODController {
 	public HODResponseDTO searchByMob(@RequestParam String mob) {
 		return hs.searchByMob(mob);
 	}
+	
+	@GetMapping("searchBySalary")
+	public List<HODResponseDTO> searchBySalary(@RequestParam Float salary){
+		return hs.searchBySalary(salary);
+	}
 }

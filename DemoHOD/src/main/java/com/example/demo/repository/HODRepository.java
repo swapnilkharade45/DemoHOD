@@ -19,4 +19,6 @@ public interface HODRepository extends JpaRepository<HOD, Integer> {
     List<HOD> findByAddress(String address);
     
     HOD findByMob(String mob);	
+    
+    List<HOD> findBySalary(Float salary);
 }

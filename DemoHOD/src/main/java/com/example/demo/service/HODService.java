@@ -20,4 +20,6 @@ public interface HODService {
 	List<HODResponseDTO> searchByAddress(String address);
 	
 	HODResponseDTO searchByMob(String mob);
+	
+	List<HODResponseDTO> searchBySalary(Float salary);
 }

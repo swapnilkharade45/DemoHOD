@@ -72,4 +72,13 @@ public class HODServiceImpl implements HODService {
 		HOD hod = hr.findByMob(mob);
 		return HODResponseDTO.toResponse(hod);
 	}
+
+	@Override
+	public List<HODResponseDTO> searchBySalary(Float salary) {
+		List<HODResponseDTO> dto = new ArrayList<>();
+		for (HOD x : hr.findBySalary(salary)) {
+			dto.add(HODResponseDTO.toResponse(x));
+		}
+		return dto;
+	}
 }
