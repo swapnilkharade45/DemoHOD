@@ -5,12 +5,15 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dto.HODRequestDTO;
 import com.example.demo.dto.HODResponseDTO;
 import com.example.demo.service.HODService;
+
+import jakarta.validation.Valid;
 
 @RestController
 public class HODController {
@@ -19,12 +22,12 @@ public class HODController {
 	private HODService hs;
 	
 	@PostMapping("add")
-	public void addHODs(HODRequestDTO dto) {
+	public void addHODs(@Valid @RequestBody HODRequestDTO dto) {
 		hs.add(dto);
 	}
 	
 	@GetMapping("display")
-	public List<HODResponseDTO> displayHOD() {
+	public List<HODResponseDTO> displayHODResponseDTOs() {
 		return hs.display();
 	}
 	
